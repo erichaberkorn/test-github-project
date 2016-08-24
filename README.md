@@ -1,1 +1,1 @@
-# test-gh-project
+# test-github-project
