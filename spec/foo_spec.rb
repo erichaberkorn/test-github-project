@@ -21,5 +21,6 @@ RSpec.describe Foo, "#foo" do
 
   it "is pending" do
     pending "TODO"
+    expect(false).to be true
   end
 end
