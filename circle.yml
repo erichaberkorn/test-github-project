@@ -1,3 +1,0 @@
-test:
-  override:
-    - rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml
