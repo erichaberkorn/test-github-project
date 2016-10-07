@@ -5,11 +5,11 @@ RSpec.describe Foo, "#foo" do
     expect(true).to be true
   end
 
-	it "fails" do
+  it "fails" do
     expect(false).to be true
   end
 
-	it "also fails" do
+  it "also fails" do
     expect(false).to be true
   end
 
