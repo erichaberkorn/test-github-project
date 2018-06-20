@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: circle-ci/node:8.11-stretch-browsers
+      - image: circleci/node:8.11-stretch-browsers
     steps:
       - checkout
       - run: exit 0
