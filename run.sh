@@ -7,7 +7,7 @@ done
 
 for i in `seq 400001 1000000`;
 do
-    sleep 1000
+    sleep 1
     echo $i
 done
 
