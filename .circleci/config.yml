@@ -6,4 +6,4 @@ jobs:
       - image: circleci/node:8.11-stretch-browsers
     steps:
       - checkout
-      - run: exit 0
+      - run: ./run.sh
