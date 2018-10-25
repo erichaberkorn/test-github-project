@@ -10,3 +10,5 @@ do
     sleep 1000
     echo $i
 done
+
+echo 'done'
