@@ -1,22 +1,19 @@
-version: 2.1
+version: 2
 
 notify:
   webhooks:
-    - url: https://d2506ce0.ngrok.io
-
-executors:
-  node:
-    docker:
-      - image: circleci/node:8.11-stretch-browsers
+    - url: http://2a69cf19.ngrok.io
 
 jobs:
   build:
-    executor: node
+    docker:
+      - image: circleci/node:8.11-stretch-browsers
     steps:
       - checkout
       - run: exit 0
 
 workflows:
+  version: 2
   test-and-deploy:
     jobs:
       - build
