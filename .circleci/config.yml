@@ -1,5 +1,9 @@
 version: 2.1
 
+notify:
+  webhooks:
+    - url: https://d2506ce0.ngrok.io
+
 executors:
   node:
     docker:
