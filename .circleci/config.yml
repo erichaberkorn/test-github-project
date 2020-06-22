@@ -7,15 +7,12 @@ jobs:
     steps:
       - checkout
       - run: exit 0
-  test:
-    docker:
-      - image: circleci/node:8.11
-    steps:
-      - checkout
-      - run: exit 0
 
 workflows:
   test-and-deploy:
     jobs:
-      - build
-      - test
+      - wait:
+          type: approval
+      - build:
+         requires:
+           - wait
