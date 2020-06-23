@@ -1,19 +1,22 @@
-version: 2
+version: 2.1
 
-notify:
-  webhooks:
-    - url: http://2a69cf19.ngrok.io
+setup: true
+
+orbs:
+  continuation: sandbox/continuation@0.0.1
+
 
 jobs:
   build:
     docker:
-      - image: circleci/node:8.11-stretch-browsers
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run: exit 0
+      - continuation/continue:
+          configuration_path: generated-config.yml
+
 
 workflows:
-  version: 2
   test-and-deploy:
     jobs:
       - build
