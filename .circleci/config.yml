@@ -1,22 +1,19 @@
 version: 2.1
 
-setup: true
-
-orbs:
-  continuation: sandbox/continuation@0.0.1
-
-
 jobs:
-  build:
-    docker:
-      - image: cimg/base:stable
+  sayhello: # defines a parameterized job
+    description: A job that does very little other than demonstrate what a parameterized job looks like
+    parameters:
+      stuff:
+        description: "To whom shall we say hello?"
+        default: "World"
+        type: string
+    machine: true
     steps:
-      - checkout
-      - continuation/continue:
-          configuration_path: generated-config.yml
-
+      - run: echo "Hello << parameters.stuff >>"
 
 workflows:
-  test-and-deploy:
+  build:
     jobs:
-      - build
+      - sayhello: # invokes the parameterized job
+          stuff: Everyone
